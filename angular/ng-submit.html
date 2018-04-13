@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var  app=angular.module("myapp",[]);
+        app.controller('home',function ($scope) {
+
+            $scope.formsubmit=function (user) {
+                $scope.user=$scope.username;
+                $scope.gender=$scope.gendermale;
+                $scope.number=$scope.age;
+
+            }
+
+        });
+                </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<form ng-submit="formsubmit(user)">
+    <fieldset>
+        <legend>User</legend>
+        UserName:<input type="text" ng-model="username"><br>
+        Gender:<input type="radio" value="male" name="gender" ng-model="gendermale">Male
+                <input type="radio" value="female" name="gender" ng-model="gendermale">Female <br>
+
+        Age:<input type="number" ng-model="age"><br>
+        <input type="submit" value="submit">
+    </fieldset>
+</form>
+    <fieldset>
+        <legend>User Data</legend>
+        <form>
+        UserName:{{user}}<br>
+        Gender:{{gender}}<br>
+        Age:{{number}}
+
+    </fieldset>
+</form>
+</body>
+</html>

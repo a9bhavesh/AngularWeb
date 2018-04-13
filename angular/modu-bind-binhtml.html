@@ -1,0 +1,66 @@
+<!Doctype html>
+<head>
+	<title>Angular Js</title>
+	<style>
+	   dt{
+		font-weight="bold";
+		}
+	</style>
+	<script src="script/angular.min.js"></script>
+	<script src="script/angular-Sanitize.js"></script>
+
+		<script>
+	  var app=angular.module("myapp",['ngSanitize'])
+	
+	</script>
+</head>
+	<body ng-app="myapp">
+	   <form>
+		<fieldset>
+			<legend>Register User</legend>
+			<div>
+				<dl>
+				   <dt>Enter UserName:</dt>
+				   <dd><input type="text" ng-model="text"></dd>
+
+				   <dt>Age</dt>
+				   <dd><input type="number" min="15" max="30" ng-model="txtage"></dd>
+				  
+				   <dt>Gender</dt>
+				   <dd><input type="radio" name="gender" value="Male" ng-model="optgender">Male</dd>
+				   <dd><input type="radio" name="gender" value="Female" ng-model="optgender">Female</dd>
+				
+				   <dt>Your City</dt>
+				    <select ng-model="city">
+				    <dd>
+					<option>Vadodara</option>
+					<option>Pune</option>
+				     </dd>
+				    </select>	
+				</dl>			
+			</div>
+		</fieldset>
+			<br></br>
+
+		<fieldset>
+			<legend>User Details</legend>
+		   <div>
+			<dl>
+			   <dt>UserName:<dt>
+			    <dd ng-bind-html="text"></dd>
+			  
+				<dt>Age:<dt>
+			    <dd ng-bind-html="txtage"></dd>
+			
+				<dt>Gender:<dt>
+			    <dd ng-bind-html="optgender"></dd>
+			
+			<dt>City:<dt>
+			    <dd ng-bind-html="city"></dd>
+			
+			</dl>
+		   </div>
+		</fieldset>
+	</form>
+	</body>
+</html>

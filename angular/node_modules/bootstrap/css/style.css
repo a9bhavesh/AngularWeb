@@ -1,0 +1,12 @@
+/* Your custom styles */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: " \\ ";
+}
+
+
+.carousel .carousel-indicators li {
+    max-width: 30px;
+    height: 10px;
+    border-radius: 0%;
+    cursor: pointer;
+}

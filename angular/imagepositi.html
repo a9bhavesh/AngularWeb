@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('home',function ($scope) {
+                    $scope.animate=function (event) {
+                        $scope.imageposition={
+                            "position":'fixed',
+                            "top":event.clientY +"px",
+                            "left":event.clientX+"px",
+                        }
+
+                    }
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home" ng-mousemove="animate($event)">
+<div >Move the Mose the pointer</div>
+<img src="img/download.jpg" width="100px" height="100px" ng-style="imageposition">
+
+</body>
+</html>

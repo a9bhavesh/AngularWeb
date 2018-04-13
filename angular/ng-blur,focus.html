@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('home',function ($scope) {
+        $scope.txtname="";
+        $scope.visible=false;
+        $scope.input=function () {
+            $scope.visible=true;
+
+        }
+        $scope.change=function () {
+            $scope.visible=false;
+            $scope.txtname=$scope.txtname.toUpperCase();
+
+        }
+
+        })
+
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<div align="center">
+    Your Name:<input type="text" autofocus ng-blur="change()" ng-focus="input()" ng-model="txtname">
+    <span ng-show="isvisible">Only UpperCase</span>
+</div>
+
+</body>
+</html>

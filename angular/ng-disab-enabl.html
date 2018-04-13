@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var  app=angular.module('myapp',[]);
+        app.controller('home',function ($scope) {
+            $scope.cvvdisable=true;
+            $scope.yeardisable=true;
+            $scope.btndisable=true;
+
+            $scope.txtcard="";
+            $scope.txtcvv="";
+            $scope.lstyear="";
+
+            var pattern=/[0-9]{10}/;
+            $scope.verifycard=function () {
+                if($scope.txtcard.match(pattern)){
+                    $scope.cvvdisable=false;
+                }
+                else
+                {
+                    $scope.cvvdisable=true;
+                }
+
+            }
+
+            $scope.verifycvv=function () {
+                if ($scope.txtcvv=4050)
+                {
+                    $scope.yeardisable=false;
+                }
+                else
+                {
+                    $scope.yeardisable=true;
+                }
+
+            }
+
+            $scope.verifyyear=function () {
+                if ($scope.lstyear=2019)
+                {
+                    $scope.btndisable=false;
+                }
+                else
+                {
+                    $scope.btndisable=true;
+                }
+
+            }
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<fieldset>
+    <legend>Paytem</legend>
+    <dt>
+        <dt>Card Number</dt>
+        <dd><input type="text" ng-model="txtcard" ng-keyup="verifycard()" ></dd>
+
+        <dt>Cvv</dt>
+        <dd><input type="text" size="4" ng-model="txtcvv" ng-keyup="verifycvv()" ng-disabled="cvvdisable"></dd>
+
+        <dt>Expiry Year</dt>
+    <dd>
+        <select ng-model="lstyear" ng-keyup="verifycard()" ng-disable="yeardisable" ng-change="verifyyear()">
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+        </dd>
+    </dl>
+    <br>
+    <button ng-disable="btndisable">Pay</button>
+</fieldset>
+
+</body>
+</html>

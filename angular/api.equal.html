@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('Myapp',[]);
+        app.controller('Home',function ($scope) {
+            $scope.firstvisible=true;
+            $scope.secondvisible=false;
+
+            $scope.first={};
+            $scope.second={};
+
+            $scope.transfer=function () {
+                $scope.firstvisible=false;
+                $scope.secondvisible=true;
+            }
+
+            $scope.confirm=function () {
+                $scope.result=angular.equals($scope.first,$scope.second);
+
+                if ($scope.result==true){
+                    $scope.msg="Transaction Success";
+                }else {
+                    $scope.msg="mis match your Details"
+                }
+                }
+        })
+        </script>
+</head>
+<body ng-app="Myapp" ng-controller="Home">
+<fieldset ng-show="firstvisible">
+    <legend>Transfer Amount</legend>
+    <dl>
+        <dt>Amount Number</dt>
+        <dd><input type="text" ng-model="first.acno"></dd>
+        <dt>Transaction Password</dt>
+        <dd><input type="password" ng-model="first.pwd"></dd>
+    </dl>
+        <button ng-click="transfer()">Transfer</button>
+</fieldset><br>
+<fieldset ng-show="secondvisible">
+    <legend>Confirm Your Details</legend>
+    <dl>
+        <dt>Reenter Account Number</dt>
+        <dd><input type="text" ng-model="second.acno"></dd>
+        <dt>Reenter Password</dt>
+        <dd><input type="password" ng-model="second.pwd"></dd>
+    </dl>
+    <button ng-click="confirm()">Confirm</button>
+</fieldset>
+<h1>{{msg}}</h1>
+</body>
+</html>

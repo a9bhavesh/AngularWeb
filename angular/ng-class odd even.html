@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <style>
+        thead{
+            background-color: blue;
+            color: white;
+        }
+        .oddstyle{
+            background-color: yellow;
+        }
+        .evenstyle{
+            background-color: green;
+        }
+        </style>
+    <script src="script/angular.js"></script>
+    <script>
+        var  app=angular.module('myapp',[]);
+        app.controller('home',function ($scope) {
+
+            $scope.product=[{name:'tv',price:5000},
+                {name:'samsung',price:40000},];
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<table align="center" width="300" border="1">
+    <th>Name</th>
+    <th>Price</th>
+    <tr ng-repeat="rep in product" ng-class-odd="'oddstyle'" ng-class-even="'evenstyle'">
+        <td>{{rep.name}}</td>
+        <td>{{rep.price}}</td>
+    </tr>
+</table>
+</body>
+</html>

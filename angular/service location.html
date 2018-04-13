@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope,$location) {
+
+            $scope.visible=false;
+            $scope.GetDetails=function () {
+                $scope.visible=true;
+                $scope.server=$location.host();
+                $scope.protocol=$location.protocol();
+
+                switch ($scope.protocol())
+                {
+                    case  "http":
+                        $scope.msg="Page is accessed from http server (Not secured protocol)";
+                        break;
+                    case "file":
+                        $scope.msg="page is being accessed from file system";
+                        break;
+                }
+                $scope.url=$location.url();
+            }
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<button ng-click="GetDetails()">Client Location</button>
+<div ng-show="isvisible">
+    <dl>
+        <dt>Server/Ip Addre</dt>
+        <dd>{{server}}</dd>
+
+        <dt>Protocl</dt>
+        <dd>{{protocol}}<br>{{msg}}</dd>
+
+        <dt>Url</dt>
+        <dd>{{url}}</dd>
+    </dl>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script src="apps/app1.js"></script>
+    <script>
+        var app2=angular.module("app2",['app1']);
+        app2.controller('app2controller',function ($scope,productprice ){
+            $scope.id=1;
+            $scope.name="mobile";
+            $scope.price=productprice;
+        })
+        </script>
+</head>
+<body ng-app="app2" ng-controller="app2controller">
+<h2>Details</h2>
+<div>
+    id:{{id}}<br>
+    Name:{{Name}}<br>
+    Price:{{price}}<br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<script src="script/angular.min.js"></script>
+<script>
+angular.module("myapp",[])
+.controller("con1",function($scope){
+alert("module created")
+$scope.info="Welcome to Angular js"
+})
+.controller("con2",function($scope){
+$scope.info="Welcome to Jquery"
+})
+</script>
+<body ng-app="myapp">
+<div ng-controller="con1">
+<h1 style="color:red"> {{info}}</h1>
+</div>
+
+<div ng-controller="con2">
+<h1 style="color:orange">{{info}}</h1>
+</div>
+</script>

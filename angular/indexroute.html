@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script src="script/angular-route.js"></script>
+<script>
+    var app=angular.module('myapp',['ngRoute']);
+    app.config(function ($routeProvider) {
+        $routeProvider
+            .when('/',{
+                templateUrl:'Views/home.html',
+            })
+            .when('/home',{
+                templateUrl:'Views/home.html',
+            })
+            .when('/about',{
+                templateUrl:'Views/about.html',
+            })
+            .when('/contact',{
+                templateUrl:'Views/contact.html'
+            })
+            .otherwise({
+                template:"<h2>Select Your Topics</h2>"
+            })
+        })
+    app.controller('Home',function ($scope) {
+        $scope.title="NareshIt | Hyderabad"
+    });
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<table width="800" border="1" cellspacing="4" cellpadding="4" align="center">
+<tr>
+    <td align="center">{{title}}</td>
+</tr>
+    <tr style="height: 400px">
+        <td style="width: 200px">
+            <ol>
+                <li><a href="#!home">Home</a></li>
+                <li><a href="#!about">About</a></li>
+                <li><a href="#!contact">Contact</a></li>
+            </ol>
+        </td>
+        <td>
+            <ng-view></ng-view>
+        </td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center">
+        &copy; CopyRight 2018<br>
+        Faculty| Courses | Offers | Development
+    </td>
+
+    </tr>
+</table>
+</body>
+</html>

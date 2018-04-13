@@ -1,0 +1,17 @@
+<!Doctype html>
+<html lang="en-IN">
+<head>
+	<title>Angular template</title>
+    <script src="script/angular.js"></script>
+</head>
+	<body ng-app>
+	    <div>
+		FirstName:<input type="text" ng-model="fname"></br>
+		LastName:<input type="text" ng-model="lname">	 
+	   </div>	
+
+		<div>
+		   <span ng-bind-template="{{fname}} {{lname}}"></span>
+		</div>
+</body>
+</html>

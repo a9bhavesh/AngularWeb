@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<form name="form1">
+    Your Name:<input type="text" ng-model="txtname" ng-minlength="4" ng-maxlength="10" name="txtname" ng-required="true">
+    <span ng-show="form1.txtname.$error.maxlength">Name Too Long</span>
+    <span ng-show="form1.txtname.$error.minLength">Name Short </span>
+    <span ng-show="form1.txtname.$error.required">Name Required</span>
+</form>
+
+</body>
+</html>

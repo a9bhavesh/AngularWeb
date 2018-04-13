@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<fieldset>
+    <legend>Your Comments</legend>
+    <textarea rows="3" cols="40">Terms of Services:</textarea></br>
+<textarea rows="3" cols="40" readonly>Licence Terms</textarea><br>
+<input type="checkbox" ng-model="terms">Accept Terms</br>
+<button ng-disabled="!terms">Post Comment</button>
+</fieldset>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('home',function ($scope,$http) {
+            $http.get("ng-repeat.html")
+                .then(function (response) {
+                    $scope.data=response.data;
+                    $scope.status=response.status;
+                    $scope.text=response.statusText;
+                     })
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<dl>
+    <dt>Data</dt>
+    <dd>{{data}}</dd>
+    <dt>status</dt>
+    <dd>{{status}}</dd>
+    <dt>text</dt>
+    <dd>{{text}}</dd>
+</dl>
+
+</body>
+</html>

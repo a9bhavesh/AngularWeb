@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope,$log) {
+            $scope.$log=$log;
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+Message:<input type="text" ng-model="txtmsg"><br>
+<button ng-click="$log.info('txtmsg')">Info</button>
+<button ng-click="$log.warn('txtmsg')">Warning</button>
+<button ng-click="$log.error('txtmsg')">Error </button>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('app',[]);
+        app.controller("Home",function ($scope) {
+            $scope.yello=function (event) {
+                $scope.msg="Yellow";
+            }
+            $scope.red=function (event) {
+                $scope.msg="Red";
+            }
+            $scope.green=function (event) {
+                $scope.msg="Green";
+            }
+            $scope.blue=function (event) {
+                $scope.msg="Blue";
+            }
+            $scope.yele=function (event) {
+                $scope.msg=""
+            }
+            $scope.rele=function (event) {
+                $scope.msg=""
+            }
+            $scope.grle=function (event) {
+                $scope.msg=""
+            }
+            $scope.ble=function (event) {
+                $scope.msg=""
+            }
+        })
+        </script>
+<style>
+    .div1 div{
+        display: inline-block;
+    }
+    .ye{
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+    }
+    .re{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+    .div2 div{
+        display: inline-block;
+    }
+    .gr{
+        width: 50px;
+        height: 50px;
+        background-color: green;
+    }
+    .bl{
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+    }
+    </style>
+</head>
+<body ng-app="app" ng-controller="Home">
+<div class="div1">
+    <div class="ye" ng-mouseover="yello($event)" ng-mouseleave="yele($event)"></div>
+    <div class="re" ng-mouseover="red($event)" ng-mouseleave="rele($event)"></div>
+</div>
+<div class="div2">
+    <div class="gr" ng-mouseover="green($event)"ng-mouseleave="grle($event)"></div>
+    <div class="bl" ng-mouseover="blue($event)" ng-mouseleave="ble($event)"></div>
+</div>
+<span>{{msg}}</span>
+</body>
+</html>

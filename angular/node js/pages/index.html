@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="nose js/pages/angular.js"></script>
+    <script src="pages/angular-route.js"></script>
+    <script>
+        var app=angular.module('myapp',['ng-route']);
+        app.controller('home',function ($scope,$http) {
+          $scope.products=[];
+          $http.get('/products')
+              .then(function (response) {
+                  $scope.product=response.data;
+              })
+        })
+
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<h2>Product Index</h2>
+<table>
+    <th>Product Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Manufacture</th>
+    <tr ng-repeat="item in products">
+        <td>{{item.p_id}}</td>
+        <td>{{item.p_name}}</td>
+        <td>{{item.p_cost | currency:'&#8377;'}}</td>
+        <td>{{item.mfd| date}}</td>
+    </tr>
+</table>
+</body>
+</html>

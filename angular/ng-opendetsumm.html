@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<table width="800" border="1" align="center">
+    <tr height="400">
+        <td width="500">
+            <h2>Table of Contents</h2>
+            <input type="checkbox" ng-model="js">Javascript</br>
+        <input type="checkbox" ng-model="jq">Jquery
+        </td>
+    </tr>
+    <td>
+        <details ng-open="js">
+            <summary>Javascript</summary>
+            <ol>
+                <li>Variable</li>
+                <li>Datatype</li>
+                <li>Operator</li>
+            </ol>
+        </details>
+        <details ng-open="jq">
+            <summary>Jquery</summary>
+            <ol>
+                <li>Variable</li>
+                <li>Jquery</li>
+                <li>operator</li>
+            </ol>
+        </details>
+    </td>
+</tr>
+</table>
+
+</body>
+</html>

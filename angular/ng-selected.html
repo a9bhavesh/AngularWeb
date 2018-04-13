@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<div>
+    Are You from hyd?
+    <input type="checkbox" ng-model="txt"><br>
+    Are You from Delhi?
+    <input type="checkbox" ng-model="txt1"><br>
+    Are You from Chennai?
+    <input type="checkbox" ng-model="txt2">
+
+</div>
+</br>
+choose city:
+<select>
+    <option>Select City</option>
+    <option ng-selected="txt">Delhi</option>
+    <option ng-selected="txt1">Hyd</option>
+    <option ng-selected="txt2">Chennai</option>
+</select>
+</body>
+</html>

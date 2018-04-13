@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('home',function ($scope) {
+            $scope.getpo=function (event) {
+                $scope.msg="Red";
+            }
+            $scope.getpos=function (event) {
+                $scope.msg="";
+
+            }
+            $scope.yello=function (event) {
+                $scope.msg="Yellow";
+            }
+            $scope.yelll=function (event) {
+                $scope.msg="";
+            }
+        })
+        </script>
+<style>
+    .red{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+    .yellow{
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<span>{{msg}}{{}}</span>
+<div class="red" ng-mouseover="getpo($event)" ng-mouseleave="getpos($event)">
+</div><br>
+    <div class="yellow" ng-mouseover="yello($event)" ng-mouseleave="yelll($event)">
+    </div>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script src="script/angular-route.js"></script>
+    <script>
+        var app=angular.module('myapp',['ngRoute']);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when('/javascript',{
+                    template:"<h2>Javascript</h2><ol><li>Variable</li><li>Data Types</li></ol>"
+                })
+                .when('/Angular',{
+                    template:"<h2>Angular Js</h2><ol><li>Fillters</li><li>Services</li></ol>"
+                })
+                .otherwise({
+                    template:"<h2>Select Your Topics</h2>"
+                })
+        })
+        app.controller('Home',function ($scope) {
+            $scope.msg="Tutoroal Home";
+        });
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<table border="1" width="600">
+
+    <tr style="height: 300px">
+        <td style="width: 200px">
+            <ol>
+                <li><a href="#!javascript">Javascript</a></li>
+                <li><a href="#!Angular">Angular js</a></li>
+            </ol>
+        </td>
+        <td style="width: 400px">
+            <ng-view></ng-view>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

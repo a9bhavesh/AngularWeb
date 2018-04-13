@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ngcliini</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+    <div ng-init="count=0">
+        <span style="font-size: 25px">Like{{count}}Dislike</span>
+        <img src="img/download.jpg" width="250" height="250"></br>
+         <img src="img/like.jpg" ng-click="count=count+1" >
+        <img src="img/dislike.jpg" ng-click="count=count-1">
+    </div>
+</body>
+</html>

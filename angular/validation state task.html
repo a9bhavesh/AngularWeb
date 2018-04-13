@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<form name="formname">
+    <dl>
+        <dt>UserName</dt>
+        <dd><input type="text" name="txtname" ng-model="txtname" required ng-maxlength="10" ng-minlength="4"></dd>
+    </dl>
+    <br>
+    <dt>This is Not Modified</dt>
+    <dd>{{formname.txtname.$pristine}}</dd>
+    <dt>This Modified </dt>
+    <dd>{{formname.txtname.$dirty}}</dd>
+    <dt>Is Valid Data</dt>
+    <dd>{{formname.txtname.$valid}}</dd>
+    <dt>Is InValid Data</dt>
+    <dd>{{formname.txtname.$invalid}}</dd>
+    <dt>Is Untouched Focus</dt>
+    <dd>{{formname.txtname.$untouched}}</dd>
+    <dt>Is Focusted Blur</dt>
+    <dd>{{formname.txtname.$touched}}</dd>
+</form>
+
+</body>
+</html>

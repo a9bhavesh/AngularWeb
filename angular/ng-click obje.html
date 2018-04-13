@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var  app=angular.module("myapp",[]);
+        app.controller("home",function ($scope) {
+            $scope.isvisible=false;
+            $scope.register=function (user) {
+                $scope.isvisible=true;
+                $scope.name=user.name;
+                $scope.age=user.age;
+                $scope.opt=user.gender;
+                $scope.obj=user;
+
+            }
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<br>
+    <fieldset>
+        <legend>Registration</legend>
+        <div>
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" ng-model="user.name"></dd>
+            <dt>Age</dt>
+            <dd><input type="number" max="25" min="15" ng-model="user.age"></dd>
+            <dt>Gender</dt>
+            <dd><input type="radio" value="male" ng-model="user.gender">Male
+            <input type="radio" value="female" ng-model="user.gender">Female</dd>
+        </dl>
+            <button ng-click="register(user)">Register</button>
+        </div>
+    </fieldset>
+</br>
+<fieldset>
+    <legend>Details</legend>
+    <div>
+        <dl>
+            <dt>Name:</dt>
+            <dd ng-bind="name"></dd>
+
+            <dt>Age</dt>
+            <dd ng-bind="age"></dd>
+
+            <dt>Gender:</dt>
+            <dd ng-bind="opt"></dd>
+        </dl>
+    </div>
+</fieldset>
+</form>
+</body>
+</html>

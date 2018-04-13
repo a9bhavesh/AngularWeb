@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope) {
+            $scope.txtemail="";
+            $scope.txtpwd="";
+            $scope.msg="";
+
+            $scope.verify=function () {
+         var email=$scope.txtemail;
+         var passw=$scope.txtpwd;
+
+            a[i]=email;
+            a[j]=passw;
+
+            if (a[i]===a[j]){
+                $scope="Invalid";
+            }
+            else {
+                $scope.msg="Valid";
+            }
+        }
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<br>
+    <label>Email Id</label>
+    <input type="text" name="email" ng-model="txtemail"></br>
+<label>Password</label>
+<input type="text" name="pwd" ng-model="txtpwd"><br>
+<button ng-click="verify()">Verify</button>
+</form>
+<div>
+{{msg}}
+</div>
+</body>
+</html>

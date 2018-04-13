@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module("myapp",[]);
+        app.controller('home',function ($scope) {
+
+            $scope.register=function () {
+
+
+                $scope.name=$scope.txtname
+                $scope.age=$scope.txtage;
+                $scope.opt=$scope.gender;
+
+
+            }
+           })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+    <br>
+        <fieldset>
+            <legend>Regiseter:</legend>
+            <div>
+                <dl>
+                    <dt>Name</dt>
+                    <dd><input type="text" ng-model="txtname"></dd>
+
+                    <dt>Age</dt>
+                    <dd><input type="number" min="15" max="30" ng-model="txtage"></dd>
+
+                    <dt>Gender</dt>
+                    <dd><input type="radio" value="Male" ng-model="gender">Male</dd>
+                    <dd><input type="radio" value="Female" ng-model="gender">Female</dd>
+                </dl>
+
+                <button ng-click="register()">Register</button>
+            </div>
+        </fieldset></br>
+        <fieldset>
+            <legend>Details:</legend>
+            <div>
+                <dl>
+                <dt>Name:</dt>
+                <dd ng-bind="name"></dd>
+
+                <dt>Age:</dt>
+                <dd ng-bind="age"></dd>
+
+                <dt>Gender:</dt>
+                <dd ng-bind="opt"></dd>
+                </dl>
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+</html>

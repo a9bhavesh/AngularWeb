@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Angular Js</title>
+	<script src="script/angular.js"></script>
+<script>
+var app=angular.model("app",[]);
+app.controller("index",function($scope){
+	var msg="Hi Bhavesh";
+	$scope.msg=msg;
+});
+</script>
+</head>
+<body ng-app="app">
+<div ng-controller="index">
+	{{msg}};
+</div>
+
+</body>
+</html>

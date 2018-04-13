@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope) {
+            $scope.productcopy={};
+            $scope.submit=function (product) {
+                angular.copy(product,$scope.productcopy);
+            }
+            $scope.reset=function () {
+                angular.copy($scope.productcopy);
+            }
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+Name:
+<input type="text" ng-model="product.name"><br>
+Product Id:
+<input type="number" ng-model="product.id"><br>
+is in stock:
+<input type="radio" name="stock" ng-model="product.stock" value="available">Yes
+<input type="radio" name="stock" ng-model="product.stock" value="out of stock">No <br>
+<button ng-click="submit(product)">Submit</button>
+<button ng-click="reset()">Reset</button>
+<h2>Product Details</h2>
+<div>
+    <pre>
+        {{productcopy | json }}
+    </pre>
+</div>
+</body>
+</html>

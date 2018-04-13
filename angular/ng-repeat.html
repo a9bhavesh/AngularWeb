@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+
+<h2>Product List</h2>
+<div ng-init="products=['tv','shoe','mobile']">
+    <ol>
+        <li ng-repeat="items in products">{{items}}</li>
+    </ol>
+</div>
+
+<h2>Products Table</h2>
+<div ng-init="productstable=[{productId:1,Name:'Tv',Price:34000.32},
+{productId:2,Name:'Nike shoe',Price:3400.32}]">
+    <table width="400" border="1">
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <tr ng-repeat="items in productstable">
+            <td>{{items.productId}}</td>
+            <td>{{items.Name}}</td>
+            <td>{{items.Price}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

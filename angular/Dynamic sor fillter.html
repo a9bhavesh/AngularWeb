@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module("myapp",[]);
+        app.controller("Home",function ($scope) {
+         $scope.products=[{
+             id:1,Name:"Samsung Tv",Price:4000,Mfd:new Date('2018/01/10')},
+            { id:2,Name:"Mobile",Price:5000,Mfd:new Date('2017/02/10')
+         }];
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<fieldset>
+    <legend>Sorting Data</legend>
+    <select>
+        <option value="id">Product Id</option>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+        <option value="mfd">Manufacture</option>
+
+    </select>
+    <input type="checkbox" ng-model="reverse">Reverse
+</fieldset>
+<table border="1" width="500" align="center">
+    <th>Product Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Manufacture</th>
+    <tr ng-repeat="item in products| orderBy:field:reverse">
+        <td>{{item.id}}</td>
+        <td>{{item.Name | uppercase}}</td>
+        <td>{{item.Price | currency:'&#8377;':2}}</td>
+        <td>{{item.Mfd | date:'MMMM d,yyyy'}}</td>
+    </tr>
+</table>
+</body>
+</html>

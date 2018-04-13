@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var  app=angular.module('myapp',[]);
+        app.controller('home',function ($scope) {
+            $scope.x=0;
+            $scope.y=0;
+
+
+            $scope.GetPosition=function (event) {
+                $scope.x=event.clientX;
+                $scope.y=event.clientY;
+
+                if ($scope.x>=167 && $scope.x<=291)
+                {
+                    $scope.msg="Mouse is over car";
+                }
+                else
+                {
+                    $scope.msg="Mouse out of car";
+                }
+
+            }
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<div>
+    x={{x}}<br>
+    y={{y}}<br>
+    {{msg}}
+</div><br>
+<img ng-src="img/car1.jpg" width="300" height="300" ng-mouseover="GetPosition($event)">
+
+</body>
+</html>

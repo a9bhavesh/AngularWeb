@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<form name="formname">
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" name="txtname" ng-model="txtname" required></dd>
+
+        <dt>Password</dt>
+        <dd><input type="password" name="txtpwd" ng-model="txtpwd" ng-maxlength="10"></dd>
+    </dl>
+    <br>
+    <button>Submit</button>
+</form><br>
+<div>
+    <dl>
+        <dt>Is any Field Modified:Pristine</dt>
+        <dd>{{formname.$pristine}}</dd>
+        <dt>One or More field Modified:Dirty</dt>
+        <dd>{{formname.$dirty}}</dd>
+        <dt>Is Form Valid</dt>
+        <dd>{{formname.$valid}}</dd>
+        <dt>Is Form Invalid</dt>
+        <dd>{{formname.$invalid}}</dd>
+        <dt>Is Form Submitted</dt>
+        <dd>{{formname.$submitted}}</dd>
+    </dl>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Angular Js</title>
+<script src="script/angular.js"></script>
+<script>
+	var app=angular.module("myapp",[])
+	app.controller("home",function($scope){
+	alert("Module created")
+	var msg="Angular js"
+	$scope.msg=msg
+});
+</script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="home">
+	{{msg}}
+</div>
+</body>
+</html>

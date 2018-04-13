@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+        <script>
+
+            var app=angular.module('myapp',[]);
+            app.controller('home',function ($scope) {
+                $scope.products=[{category:'Electronics',Product:['Tv','Mobile']},
+                    {category:'shoes',Product:['Nikeshoe','Lee cooper Boot']}];
+
+            })
+            </script>
+</head>
+<body ng-app="myapp" ng-controller="home">
+<h2>Categories & Products</h2>
+<ol>
+    <li ng-repeat="int in products">{{int.category}}
+        <ul>
+            <li ng-repeat="prod in int.Product">{{prod}}</li>
+        </ul>
+    </li>
+</ol>
+</body>
+</html>

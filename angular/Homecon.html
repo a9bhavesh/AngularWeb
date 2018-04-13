@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Angular Js</title>
+<script src="script/angular.js"></script>
+<script>
+app=angular.module("myapp",[]);
+app.controller('home',function($scope){
+var msg="Naresh It";
+$scope.msg=msg;
+});
+
+app.controller('index',function($scope){
+var pos="Bhavesh";
+$scope.pos=pos;
+});
+</script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="home">
+<h2 style='color:red;'>{{msg}}</h2>
+</div>
+
+<div ng-controller="index">
+{{pos}}
+</div>
+</body>
+</html>

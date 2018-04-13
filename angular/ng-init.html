@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+    <div style="background-color: yellow; height: 50px;" ng-init="count=0">
+        Click here..
+        <span ng-bind="count" style="color: red"></span>
+    </div>
+    <button ng-click="count=count+1">Click</button>
+
+    <div ng-init="product1={id:1, Name:'Bhavesh',Sallary:10000}" style="background-color: lightblue;color: green">
+
+    <dl>
+            <dt>Product Id</dt>
+            <dd>{{product1.id}}</dd>
+
+            <dt>Name</dt>
+            <dd>{{product1.Name}}</dd>
+
+            <dt>Price</dt>
+            <dd>{{product1.Sallary}}</dd>
+        </dl>
+    </div>
+    <div ng-init="product2=[1,'Bhavesh',10000]" style="background-color: cyan;color:red">
+        <dl>
+            <dt>Employee</dt>
+            <dd>{{product2 [0]}}</dd>
+
+            <dt>Name:</dt>
+            <dd>{{product2 [1]}}</dd>
+
+            <dt>Sallary:</dt>
+            <dd>{{product2 [2]}}</dd>
+        </dl>
+    </div>
+</body>
+</html>

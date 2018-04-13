@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope,$http) {
+        $http({
+            method:"GET",
+            url:"home.html"
+        })
+            .then(function onsuccess() {
+                $scope.msg="package found";
+            })
+            function onfailure() {
+            $scope.msg="Package Not found";
+            }
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+Status:{{msg}}
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<img ng-init="pic='img/car1.jpg'" ng-src="{{pic}}" ng-mouseover="pic='img/car2.jpg'" ng-mouseleave="pic='img/car1.jpg'"><br>
+<b>Move mouse over the image to change Ads</b><br>
+
+<img ng-init="lik='img/dislike.jpg'" ng-src="{{lik}}" ng-mousedown="lik='img/like.jpg'" ng-mouseup="lik='img/dislike.jpg'"><br>
+<b>Press Hold down mouse button on the like</b>
+</body>
+</html>

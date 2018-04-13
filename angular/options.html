@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope) {
+
+            $scope.lstcategories="";
+            $scope.category=["Electronics","Shoes"];
+
+            $scope.electronics=["Samsung Tv","Mobile"];
+            $scope.shoes=["Nike shoes","Bata Shoes"];
+
+
+                $scope.newproducts=[];
+                    $scope.getcategores=function () {
+
+                        $scope.categoryesname=$scope.lstcategories;
+            switch ($scope.categoryesname) {
+                case "Electronics":
+                    $scope.newproducts = $scope.electronics;
+                    break;
+                case "shoes":
+                    $scope.newproducts=$scope.shoes;
+                    break;
+            }
+        }
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<div align="center">
+    Select Categories<br>
+    <select ng-model="lstcategories" ng-change="getcategores()" ng-options="item for item in category"></select><br>
+    Select Product<br>
+    <select ng-model="lstproducts" ng-options="item for item in newproducts" ></select>
+</div>
+</body>
+</html>

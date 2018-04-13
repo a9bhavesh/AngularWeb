@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input .ng-pristine{
+            background-color: yellow;
+        }
+        input .ng-touched .ng-invalid{
+            background-color: red;
+        }
+        input .ng-untouced .ng-valid{
+            background-color: green;
+        }
+        </style>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<form name="frmhome">
+    <div>
+        <label>User Name</label>
+        <input type="text" name="txtname" ng-model="txtname" required>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" name="txtemail" ng-model="txtemail">
+    </div>
+</form>
+
+</body>
+</html>

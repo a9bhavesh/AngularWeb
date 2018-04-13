@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('app',[]);
+        app.controller('Home',function ($scope,$http) {
+            $http.get("ng-required.html")
+            .then(function (response) {
+
+                $scope.data=response.data;
+                $scope.status=response.status;
+                $scope.text=response.statusText;
+            })
+
+        })
+        </script>
+</head>
+<body ng-app="app" ng-controller="Home">
+<dl>
+    <dt>Data</dt>
+    <dd>{{data}}</dd>
+    <dt>Status</dt>
+    <dd>{{status}}</dd>
+    <dt>Text</dt>
+    <dd>{{text}}</dd>
+</dl>
+
+</body>
+</html>

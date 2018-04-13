@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<div ng-init="style={}"></div>
+<button ng-click="style={'background-color':'yellow'}">Background Color</button>
+<button ng-click="style={'color':'red'}">TextColor</button>
+<button ng-click="style={}">Clear</button>
+<h1 ng-style="style">Welcome to Angular Js</h1>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<form name="formname" novalidate>
+    <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" name="txtname" ng-model="txtname" required ng-minlength="4" ng-maxlength="10"></dd>
+    </dl>
+    <br>
+    <h2>Status</h2>
+    <dl>
+        <dt>Field Not ModiFied-Pristine</dt>
+        <dd>{{formname.txtname.$pristine}}</dd>
+        <dt>Field Modified</dt>
+        <dd>{{formname.txtname.$dirty}}</dd>
+        <dt>Field Have Valid Data</dt>
+        <dd>{{formname.txtname.$valid}}</dd>
+        <dt>Field Is Invalid Valid</dt>
+        <dd>{{formname.txtname.$invalid}}</dd>
+        <dt>Untouched - Focus</dt>
+        <dd>{{formname.txtname.$untouched}}</dd>
+        <dt>Touched - Blur</dt>
+        <dd>{{formname.txtname.$touched}}</dd>
+    </dl>
+</form>
+
+</body>
+</html>

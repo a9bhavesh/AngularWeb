@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope) {
+            $scope.changecase=function () {
+
+                $scope.name=angular.uppercase($scope.name);
+            }
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+your Name:
+<input type="text" ng-model="name" ng-blur="changecase()"><br>
+</body>
+</html>

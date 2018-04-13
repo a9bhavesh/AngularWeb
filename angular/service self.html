@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope,$location,$anchorScroll) {
+            $scope.c1=function () {
+                $location.hash('ca1');
+            }
+            $scope.c2=function () {
+                $location.hash('ca2');
+            }
+            $scope.c3=function () {
+                $location.hash('ca3');
+            }
+            $scope.c4=function () {
+                $location.hash('ca4')
+            }
+            $scope.c5=function () {
+                $location.hash('ca5')
+            }
+            $scope.top=function () {
+                $location.hash('tp')
+            }
+
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<h2 id="tp">Details Of Cars</h2>
+<ol >
+    <li><a href="" ng-click="c1()">Hondai</a></li>
+    <li> <a href="" ng-click="c2()">RangeRover</a></li>
+    <li><a href="" ng-click="c3()">Baleno</a></li>
+    <li> <a href="" ng-click="c4()">Scorpio</a></li>
+    <li> <a href="" ng-click="c5()">Farari</a></li>
+
+</ol>
+<a href="" id="ca1" ng-click="top()"><img src="img/car1.jpg"></a><br>
+<a href="" id="ca2" ng-click="top()"><img src="img/car2.jpg"></a><br>
+<a href="" id="ca3" ng-click="top()"><img src="img/car3.jpg"></a><br>
+<a href="" id="ca4" ng-click="top()"><img src="img/car4.jpg"></a><br>
+<a href="" id="ca5" ng-click="top()"><img src="img/car5.jpg"></a>
+</body>
+</html>

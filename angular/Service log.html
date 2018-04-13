@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope,$location ,$anchorScroll) {
+            $scope.jsclick=function () {
+                $location.hash('js');
+            }
+            $scope.angularclick=function () {
+                $location.hash('angular');
+
+            }
+            $scope.cssclick=function () {
+                $location.hash('css');
+
+            }
+            $scope.top=function () {
+                $location.hash('top')
+            }
+        })
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<h1 id="top">Table Of Content</h1>
+<ol>
+    <li><a href="" ng-click="jsclick()">Javascript</a></li>
+    <li><a href="" ng-click="angularclick()">Angular Js</a></li>
+    <li><a href="" ng-click="cssclick()">Css</a></li>
+</ol>
+
+<h2 id="js">Javascript</h2>
+<a href="" ng-click="top()"><img src="img/car1.jpg"></a>
+<p>JavaScript Can Change HTML Content. One of many JavaScript HTML methods is getElementById().
+    This example uses the method to "find" an HTML element (with id="demo")
+    and changes the element content (innerHTML) to "Hello JavaScript": ...
+    HTML JavaScript - W3Schools
+</p>
+
+<h2 id="angular">Angular Js</h2>
+<a href="" ng-click="top()"><img src="img/car2.jpg"></a>
+<p>AngularJS is what HTML would have been, had it been designed for building web-apps.
+    Declarative templates with data-binding, MVW, MVVM, MVC, dependency injection and great
+    testability story all implemented with pure client-side JavaScript!</p>
+
+<h2 id="css">Css</h2>
+<a href="" ng-click="top()"><img src="img/download.jpg"></a>
+<p>Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing)
+    to Web documents. These pages contain information on how to learn and use CSS and on available software.
+    They also contain news from the CSS working group.</p>
+
+</body>
+</html>

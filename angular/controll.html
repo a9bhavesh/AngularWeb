@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Home</title>
+<script src="script/angular.min.js"></script>
+<script>
+var app=angular.module("home",[])
+app.controller("homecon",function($scope){
+	alert("home cintroller creted")
+	$scope.msg="Welcome to Naresh Techonoligies"
+})
+app.controller("cntcon",function($scope){
+	alert("Contact controoller are working")
+	$scope.msg="Contact For Our Institue"
+})
+</script>
+<style>
+h1{
+	font-size:32px;
+	font-family:segoe print;
+	color:orange;
+}
+h2{
+	font-size:22px;
+	font-family:tahoma;
+	color:seagreen;
+}
+</style>
+<body ng-app="home">
+<div ng-controller="homecon">
+	<h1>{{msg}}</h1>
+</div>
+
+<div ng-controller="cntcon">
+	<h2>{{msg}}</h2>
+</div>
+
+</body>

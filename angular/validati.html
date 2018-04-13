@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script/angular.js"></script>
+    <script>
+        var app=angular.module('myapp',[]);
+        app.controller('Home',function ($scope) {
+            $scope.txtemail="";
+            $scope.msg="";
+            $scope.verify=function () {
+                var atpost=$scope.txtemail.indexOf('@');
+                var dotpos=$scope.txtemail.lastIndexOf('.');
+                if (atpost<2 && (dotpos-atpost)<2)
+                {
+                  $scope.msg="Invalid Format";
+                }
+                else {
+                    $scope.msg="Email Verify";
+                    $scope.id=$scope.txtemail.substring(0,atpost);
+                    $scope.domain=$scope.txtemail.substring(atpost+7);
+
+                }
+            }
+        })
+        </script>
+</head>
+<body ng-app="myapp" ng-controller="Home">
+<form>
+    Your Email:<input type="text" name="textname" ng-model="txtemail">
+    <button ng-click="verify()">VerifyEmail</button>
+    <br>
+    <dl>
+        <dt>Status</dt>
+        <dd>{{msg}}</dd>
+        <dt>Email Id</dt>
+        <dd>{{id}}</dd>
+        <dt>Domain</dt>
+        <dd>{{domain}}</dd>
+
+    </dl>
+</form>
+<div>
+    {{msg}}
+</div>
+</body>
+</html>

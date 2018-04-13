@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js</title>
+    <script src="script/angular.js"></script>
+</head>
+<body ng-app>
+<form name="form1">
+<input type="checkbox" ng-model="required">Name required?<br>
+    Name:
+<input type="text" name="txtname" ng-required="required">
+    <span ng-show="form1.txtname.$invalid">UserName Required</span>
+</form>
+</body>
+</html>
